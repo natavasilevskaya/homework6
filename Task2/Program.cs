@@ -8,7 +8,7 @@ void InputCoefficients()
 {
   for (int i = 0; i < coeff.GetLength(0); i++)
   {
-    Console.Write($"Input the coefficients  {i+1} of the first equation (y = k * x + b):\n");
+    Console.Write($"Input the coefficients equation of {i+1} (y = k * x + b):\n");
     for (int j = 0; j < coeff.GetLength(1); j++)
     {
       if(j==0) 
