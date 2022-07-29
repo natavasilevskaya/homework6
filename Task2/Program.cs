@@ -29,5 +29,22 @@ double[] Decision(double[,] coeff)
   return crossPoint;
 }
     
+void OutputResponse(double[,] coeff)
+{
+  if (coeff[0,0] == coeff[1,0] && coeff[0,1] == coeff[1,1]) 
+  {
+    Console.Write("Lines match");
+  }
+  else if (coeff[0,0] == coeff[1,0] && coeff[0,1] != coeff[1,1]) 
+  {
+    Console.Write("Lines are paralel");
+  }
+  else 
+  {
+    Decision(coeff);
+    Console.Write($"\nТочка пересечения прямых: ({crossPoint[0]}, {crossPoint[1]})");
+  }
+}
 InputCoefficients();
-Console.Write($"Point of intersection of lines ({crossPoint[0]}, {crossPoint[1]})" + Decision(coeff));
+OutputResponse(coeff);
+
