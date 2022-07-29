@@ -3,6 +3,7 @@
 double[,] coeff = new double[2, 2];
 double[] crossPoint = new double[2];
 
+// метод принимает на вход значения коэффициентов
 void InputCoefficients(){
   for (int i = 0; i < coeff.GetLength(0); i++)
   {
@@ -16,18 +17,13 @@ void InputCoefficients(){
   }
 }
 
+//метод выполняет решение
 double[] Decision(double[,] coeff)
 {
   crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
   crossPoint[1] = crossPoint[0] * coeff[0,0] + coeff[0,1];
   return crossPoint;
 }
-
-void OutputResponse(double[,] coeff)
-{
-    Decision(coeff);
-    Console.Write($"Point of intersection of lines ({crossPoint[0]}, {crossPoint[1]})");
-}
-
+    
 InputCoefficients();
-OutputResponse(coeff);
+Console.Write($"Point of intersection of lines ({crossPoint[0]}, {crossPoint[1]})" + Decision(coeff));
