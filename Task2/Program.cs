@@ -4,7 +4,8 @@ double[,] coeff = new double[2, 2];
 double[] crossPoint = new double[2];
 
 // метод принимает на вход значения коэффициентов
-void InputCoefficients(){
+void InputCoefficients()
+{
   for (int i = 0; i < coeff.GetLength(0); i++)
   {
     Console.Write($"Input the coefficients of the first equation {i+1}-he first equation (y = k * x + b):\n");
@@ -17,7 +18,7 @@ void InputCoefficients(){
   }
 }
 
-//метод выполняет решение
+//метод выполняет решение и возвращает его
 double[] Decision(double[,] coeff)
 {
   crossPoint[0] = (coeff[1,1] - coeff[0,1]) / (coeff[0,0] - coeff[1,0]);
